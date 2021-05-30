@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreatePricingDetailsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('pricing_details', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('pricing_id')->unsigned();
+            $table->foreign('pricing_id')->references('id')->on('pricings');
+            $table->string('description');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('pricing_details');
+    }
+}

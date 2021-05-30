@@ -1,0 +1,46 @@
+// Bootstrap Css
+//@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap-grid";
+
+@import "../css/bootstrap";
+
+// Animate css
+@import "~animate.css/animate.min.css";
+
+@import '~node-snackbar/src/sass/snackbar.sass';
+
+[dir="ltr"] {
+  &[mode="light"] {
+    @import "../css/light/typography";
+    @import "../css/light/style";
+    @import "../css/light/responsive";
+  }
+  &[mode="dark"] {
+    @import "../css/dark/typography";
+    @import "../css/dark/style";
+    @import "../css/dark/responsive";
+  }
+}
+
+[dir="rtl"]{
+  &[mode="dark"] {
+    @import "../css/rtl/dark/typography";
+    @import "../css/rtl/dark/style";
+    @import "../css/rtl/dark/responsive";
+  }
+  &[mode="light"] {
+    @import "../css/rtl/light/typography";
+    @import "../css/rtl/light/style";
+    @import "../css/rtl/light/responsive";
+  }
+}
+@import "../css/developer.scss";
+.iq-global-search>ul>li a, .slick-arrow, .breadcrumb-item>a{
+  color: var(--iq-primary);
+  &:hover{
+    color: var(--iq-primary);
+  }
+}
+
+// Font awesome icon Css
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
