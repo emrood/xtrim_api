@@ -24,7 +24,7 @@ class CreateCustomersTable extends Migration
             $table->string('phone_alternative')->nullable();
             $table->string('personal_id')->nullable();
             $table->enum('id_type', ['CIN', 'NIF', 'Passeport'])->default('CIN');
-            $table->string('fingerprint_uid')->unique();
+            $table->string('fingerprint_uid')->nullable();
             $table->boolean('active')->default(true);
             $table->integer('pricing_id')->default(1);
             $table->timestamps();
