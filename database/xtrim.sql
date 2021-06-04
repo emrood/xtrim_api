@@ -13,11 +13,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for xtrim
+-- Dumping database structure for xtrim_backend
 CREATE DATABASE IF NOT EXISTS `xtrim` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `xtrim`;
 
--- Dumping structure for table xtrim.customers
+-- Dumping structure for table xtrim_backend.customers
 CREATE TABLE IF NOT EXISTS `customers` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `picture` varchar(200) DEFAULT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.failed_jobs
+-- Dumping structure for table xtrim_backend.failed_jobs
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.invoices
+-- Dumping structure for table xtrim_backend.invoices
 CREATE TABLE IF NOT EXISTS `invoices` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `invoice_number` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `invoices` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.migrations
+-- Dumping structure for table xtrim_backend.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.oauth_access_tokens
+-- Dumping structure for table xtrim_backend.oauth_access_tokens
 CREATE TABLE IF NOT EXISTS `oauth_access_tokens` (
   `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint unsigned DEFAULT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `oauth_access_tokens` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.oauth_auth_codes
+-- Dumping structure for table xtrim_backend.oauth_auth_codes
 CREATE TABLE IF NOT EXISTS `oauth_auth_codes` (
   `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint unsigned NOT NULL,
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `oauth_auth_codes` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.oauth_clients
+-- Dumping structure for table xtrim_backend.oauth_clients
 CREATE TABLE IF NOT EXISTS `oauth_clients` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned DEFAULT NULL,
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `oauth_clients` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.oauth_personal_access_clients
+-- Dumping structure for table xtrim_backend.oauth_personal_access_clients
 CREATE TABLE IF NOT EXISTS `oauth_personal_access_clients` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `client_id` bigint unsigned NOT NULL,
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `oauth_personal_access_clients` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.oauth_refresh_tokens
+-- Dumping structure for table xtrim_backend.oauth_refresh_tokens
 CREATE TABLE IF NOT EXISTS `oauth_refresh_tokens` (
   `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `access_token_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `oauth_refresh_tokens` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.password_resets
+-- Dumping structure for table xtrim_backend.password_resets
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.pricings
+-- Dumping structure for table xtrim_backend.pricings
 CREATE TABLE IF NOT EXISTS `pricings` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `pricings` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.pricing_details
+-- Dumping structure for table xtrim_backend.pricing_details
 CREATE TABLE IF NOT EXISTS `pricing_details` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `pricing_id` bigint unsigned NOT NULL,
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `pricing_details` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.settings
+-- Dumping structure for table xtrim_backend.settings
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `setting` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 
 -- Data exporting was unselected.
 
--- Dumping structure for table xtrim.users
+-- Dumping structure for table xtrim_backend.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,

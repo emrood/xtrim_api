@@ -13,7 +13,7 @@ class InitCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'init:xtrim';
+    protected $signature = 'init:xtrim_backend';
 
     /**
      * The console command description.
