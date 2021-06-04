@@ -15,7 +15,7 @@ class AddTypeToPricingTables extends Migration
     {
         Schema::table('pricings', function (Blueprint $table) {
             //
-            $table->enum('type', ['session', 'abonnement'])->default('abonnement')->after('price');
+            $table->enum('billing', ['session', 'abonnement'])->default('abonnement')->after('price');
         });
     }
 
