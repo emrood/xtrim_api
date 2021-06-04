@@ -22,32 +22,32 @@ class PricingSeeder extends Seeder
                     'type' => 'session'
                 ],
                 [
-                    'id' => 1,
+                    'id' => 2,
                     'name' => 'Spa session',
                     'price' => 20,
                     'type' => 'session'
                 ],
                 [
-                    'id' => 1,
+                    'id' => 3,
                     'name' => 'Massage room session',
                     'price' => 25,
                     'type' => 'session'
                 ],
                 [
-                    'id' => 2,
+                    'id' => 4,
                     'name' => 'Bodybuilding Standard',
                     'price' => 65,
                     'type' => 'abonnement'
 
                 ],
                 [
-                    'id' => 4,
+                    'id' => 5,
                     'name' => 'Bodybuilding premium',
                     'price' => 95,
                     'type' => 'abonnement'
                 ],
                 [
-                    'id' => 5,
+                    'id' => 6,
                     'name' => 'Dance standard',
                     'price' => 45,
                 ],
