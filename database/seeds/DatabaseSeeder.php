@@ -26,44 +26,58 @@ class DatabaseSeeder extends Seeder
                     'id' => 1,
                     'name' => 'bodybuilding session',
                     'price' => 5,
-                    'billing' => 'session'
+                    'billing' => 'session',
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
                 ],
                 [
                     'id' => 2,
                     'name' => 'Spa session',
                     'price' => 20,
-                    'billing' => 'session'
+                    'billing' => 'session',
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
                 ],
                 [
                     'id' => 3,
                     'name' => 'Massage room session',
                     'price' => 25,
-                    'billing' => 'session'
+                    'billing' => 'session',
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
                 ],
                 [
                     'id' => 4,
                     'name' => 'Bodybuilding Standard',
                     'price' => 65,
-                    'billing' => 'abonnement'
+                    'billing' => 'abonnement',
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
 
                 ],
                 [
                     'id' => 5,
                     'name' => 'Bodybuilding premium',
                     'price' => 95,
-                    'billing' => 'abonnement'
+                    'billing' => 'abonnement',
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
                 ],
                 [
                     'id' => 6,
                     'name' => 'Dance standard',
                     'price' => 45,
-                    'billing' => 'abonnement'
+                    'billing' => 'abonnement',
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
                 ],
                 [
                     'id' => 7,
                     'name' => 'Dance premium',
                     'price' => 80,
-                    'billing' => 'abonnement'
+                    'billing' => 'abonnement',
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
                 ],
             ]);
 
@@ -93,27 +107,27 @@ class DatabaseSeeder extends Seeder
                 [
                     'id' => 2,
                     'name' => 'HTG',
-                    'value' => 100,
+                    'value' => 110,
                     'editable' => 1,
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now(),
                 ],
-//                [
-//                    'id' => 3,
-//                    'name' => 'CAD',
-//                    'value' => 1.5,
-//                    'editable' => 1,
-//                    'created_at' => \Carbon\Carbon::now(),
-//                    'updated_at' => \Carbon\Carbon::now(),
-//                ],
-//                [
-//                    'id' => 4,
-//                    'name' => 'PES',
-//                    'value' => 95,
-//                    'editable' => 1,
-//                    'created_at' => \Carbon\Carbon::now(),
-//                    'updated_at' => \Carbon\Carbon::now(),
-//                ],
+                [
+                    'id' => 3,
+                    'name' => 'CAD',
+                    'value' => 1.3,
+                    'editable' => 1,
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
+                ],
+                [
+                    'id' => 4,
+                    'name' => 'PES',
+                    'value' => 65,
+                    'editable' => 1,
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
+                ],
             ]);
     }
 }
