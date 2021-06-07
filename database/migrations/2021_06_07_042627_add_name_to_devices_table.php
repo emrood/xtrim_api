@@ -15,7 +15,7 @@ class AddNameToDevicesTable extends Migration
     {
         Schema::table('devices', function (Blueprint $table) {
             //
-            $table->string('device_name')->nullable();
+            $table->string('device_name')->after('id')->nullable();
         });
     }
 
