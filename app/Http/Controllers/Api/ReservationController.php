@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
@@ -12,10 +14,26 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return response()->json('test', 200);
+        $from = Carbon::now()->toDateString();
+        $to = Carbon::now()->toDateString();
+
+        if($request->has('from_date')){
+            $from = $request->get('from_date');
+        }
+
+        if($request->has('to_date')){
+            $to = $request->get('to_date');
+        }
+        $data = DB::table('reservations')->join('rooms', 'rooms.id', 'reservations.room_id')
+            ->selectRaw('reservations.*, rooms.color')
+            ->whereDate('reservations.reservation_date', '>=', $from)
+            ->whereDate('reservations.reservation_date', '<=', $to)
+            ->orderBy('reservations.reservation_date')->orderBy('reservations.from_time')
+            ->get();
+        return response()->json($data, 200);
     }
 
     /**
