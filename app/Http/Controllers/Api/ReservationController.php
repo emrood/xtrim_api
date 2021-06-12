@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
@@ -17,8 +18,8 @@ class ReservationController extends Controller
     public function index(Request $request)
     {
         //
-        $from = Carbon::now()->toDateString();
-        $to = Carbon::now()->toDateString();
+        $from = Carbon::now()->startOfMonth()->subMonth()->setTime(0, 0, 0)->toDateTimeString();
+        $to = Carbon::now()->endOfMonth()->addMonth()->setTime(0, 0, 0)->toDateTimeString();
 
         if($request->has('from_date')){
             $from = $request->get('from_date');
@@ -33,7 +34,11 @@ class ReservationController extends Controller
             ->whereDate('reservations.reservation_date', '<=', $to)
             ->orderBy('reservations.reservation_date')->orderBy('reservations.from_time')
             ->get();
-        return response()->json($data, 200);
+
+        return Response::create($data, 200, ['Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Headers' => 'Origin, x-requested-with, Content-type, Accept', 'Content-type' => 'application/json']);
+
+//        return $data;
+//        return response()->json($data, 200);
     }
 
     /**
