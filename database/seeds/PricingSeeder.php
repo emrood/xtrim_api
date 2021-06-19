@@ -24,13 +24,13 @@ class PricingSeeder extends Seeder
                 [
                     'id' => 2,
                     'name' => 'Spa session',
-                    'price' => 20,
+                    'price' => 10,
                     'billing' => 'session'
                 ],
                 [
                     'id' => 3,
                     'name' => 'Massage room session',
-                    'price' => 25,
+                    'price' => 10,
                     'billing' => 'session'
                 ],
                 [
