@@ -29,3 +29,4 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
 Route::post('login','Auth\PassportController@login');
 Route::post('register', 'Auth\JwtController@register');
 Route::resource('reservations', 'Api\ReservationController');
+Route::resource('stats', 'Api\DataController');

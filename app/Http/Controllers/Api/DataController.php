@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Response;
 
-class ReservationController extends Controller
+
+class DataController extends Controller
 {
+    //
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +20,8 @@ class ReservationController extends Controller
     public function index(Request $request)
     {
         //
-        $from = Carbon::now()->startOfMonth()->subMonth()->setTime(0, 0, 0)->toDateTimeString();
-        $to = Carbon::now()->endOfMonth()->addMonth()->setTime(23, 59, 59)->toDateTimeString();
+        $from = Carbon::now()->startOfMonth()->subMonths(7)->setTime(0, 0, 0)->toDateString();
+        $to = Carbon::now()->addDay()->setTime(23, 59, 59)->toDateString();
 
         if($request->has('from_date')){
             $from = $request->get('from_date');
@@ -28,14 +30,21 @@ class ReservationController extends Controller
         if($request->has('to_date')){
             $to = $request->get('to_date');
         }
-        $data = DB::table('reservations')->join('rooms', 'rooms.id', 'reservations.room_id')
-            ->selectRaw('reservations.*, rooms.color')
-            ->whereDate('reservations.reservation_date', '>=', $from)
-            ->whereDate('reservations.reservation_date', '<=', $to)
-            ->orderBy('reservations.reservation_date')->orderBy('reservations.from_time')
+
+        $datas = DB::table('invoices')->selectRaw('SUM(`total`) as total, MONTH(paid_date) as paid_month')
+            ->where('status', 'Paid')
+            ->whereBetween('paid_date', [$from, $to])
+            ->groupByRaw('MONTH(paid_date)')
+            ->orderBy('paid_month')
             ->get();
 
-        return Response::create($data, 200, ['Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Headers' => 'Origin, x-requested-with, Content-type, Accept', 'Content-type' => 'application/json']);
+
+        foreach ($datas as $data){
+            $data->paid_month = date("M", mktime(0, 0, 0, $data->paid_month, 1));
+        }
+
+
+        return Response::create($datas, 200, ['Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Headers' => 'Origin, x-requested-with, Content-type, Accept', 'Content-type' => 'application/json']);
 
 //        return $data;
 //        return response()->json($data, 200);
